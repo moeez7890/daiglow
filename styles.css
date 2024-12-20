@@ -492,3 +492,177 @@ footer p {
         opacity: 1;
     }
 }
+/* Responsive Styles */
+
+/* Small devices (max-width: 600px) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .products h2 {
+        font-size: 2rem;
+    }
+
+    .product {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .about-content img {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+/* Mobile-Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header nav {
+        display: none;  /* Hidden by default */
+        width: 100%;
+        background-color: #333;  /* Background color of the mobile menu */
+        position: absolute;
+        top: 60px;  /* Adjust to position the menu below the header */
+        left: 0;
+        z-index: 50;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Adding a subtle shadow for a floating effect */
+        border-radius: 10px;  /* Rounded corners for the mobile menu */
+        transform: translateY(-20px);  /* Initial off-screen position for smoother transition */
+        transition: transform 0.3s ease-in-out;  /* Smooth slide-in effect */
+    }
+
+    header nav.open {
+        display: block;  /* Show when the "open" class is added */
+        transform: translateY(0);  /* Slide the menu into view */
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;  /* Stack the nav items vertically */
+        align-items: center;
+        padding: 20px 0;
+        list-style: none;
+    }
+
+    header nav ul li {
+        margin: 15px 0;  /* Add space between items */
+        transition: color 0.3s ease;  /* Smooth transition for color change */
+    }
+
+    header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 30px;
+        transition: background-color 0.3s, transform 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        background-color: #ff7043;  /* Hover color */
+        color: #fff;
+        transform: scale(1.1);  /* Slight scale effect */
+    }
+
+    /* Menu Toggle Button */
+    header .menu-toggle {
+        display: block;
+        font-size: 32px;
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    header .menu-toggle:hover {
+        transform: rotate(90deg);  /* Add a subtle rotation effect on hover */
+    }
+
+    /* Close button */
+    header .close-btn {
+        position: absolute;
+        top: 15px;
+        right:30 px;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    header .close-btn:hover {
+        transform: scale(1.2);  /* Slightly larger when hovered */
+        color: #ff7043;  /* Change color on hover */
+    }
+}
+
+/* General scaling for tablets and desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    header .logo {
+        font-size: 22px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .about h2, .contact h2 {
+        font-size: 3rem;
+    }
+
+    .product {
+        width: calc(50% - 20px);
+    }
+
+    .product-grid {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
