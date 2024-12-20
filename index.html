@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diaglow</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <span>Diaglow</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id= "home" class="hero">
+        <h1>Welcome to Diaglow</h1>
+        <p>Find the best deals on your favorite products.</p>
+        <button class="btn">Shop Now</button>
+    </section>
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>About Diaglow Black Hair Color</h2>
+    <div class="about-content">
+        <img src="product1.jpg" alt="Diaglow Black Hair Color">
+        <div class="about-text">
+            <p>
+                <strong>Diaglow Black Hair Color</strong> is your ultimate solution for radiant, long-lasting black hair. 
+                Formulated with care, it not only delivers a rich and natural black shade but also nourishes your hair with every application.
+            </p>
+            <p>
+                Enriched with natural ingredients, Diaglow Black Hair Color is gentle on your scalp and free from harmful chemicals. 
+                It ensures complete grey coverage while leaving your hair soft, shiny, and full of life.
+            </p>
+            <p>
+                Whether you're looking to enhance your natural beauty or make a bold statement, Diaglow Black Hair Color offers the perfect blend of color, care, and confidence.
+            </p>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Products Section -->
+    <section id= "products" class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product" data-product-id="1">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>Diaglow</h3>
+                <p>$50.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="2">
+                <img src="https://via.placeholder.com/300x200" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$30.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" data-product-id="3">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$40.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><strong>Email:</strong> support@diaglow.com</p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p><strong>Address:</strong> 123 Diaglow Street, Glowville, USA</p>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <h3>Your Cart</h3>
+            <ul id="cart-items-list"></ul>
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button id="checkout-btn">Checkout</button>
+            <button id="close-cart">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 moeez</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
