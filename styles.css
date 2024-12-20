@@ -14,8 +14,9 @@ html {
 
 /* Header */
 header {
-    background: linear-gradient(90deg, #333, #444);
-    color: #fff;
+   
+    background: linear-gradient(90deg, #444, #444);
+    color: #444;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,9 +29,6 @@ header {
     transition: background 0.3s ease;
 }
 
-header:hover {
-    background: linear-gradient(90deg, #444, #555);
-}
 
 header .logo {
     font-size: 28px;
@@ -665,4 +663,5 @@ footer p {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
 }
