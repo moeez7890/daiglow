@@ -19,6 +19,9 @@
             <span>Diaglow</span>
         </div>
         <nav>
+            <div class="close-btn">
+                <i class="fas fa-times"></i> <!-- Close button (X) -->
+              </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
@@ -30,6 +33,9 @@
             <i class="fas fa-shopping-cart"></i>
             <span id="cart-count">0</span>
         </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
     </header>
 
     <!-- Hero Section -->
@@ -102,7 +108,24 @@
         </form>
     </div>
 </section>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('header nav');
+      const closeBtn = document.querySelector('.close-btn');
+  
+      // Open the menu when the hamburger icon is clicked
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+  
+      // Close the menu when the close (X) button is clicked
+      closeBtn.addEventListener('click', () => {
+        nav.classList.remove('open');
+      });
+    });
+  </script>
+  
 
     <!-- Cart Modal -->
     <div id="cart-modal" class="cart-modal">
