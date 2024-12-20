@@ -18,10 +18,10 @@
         <div class="logo">
             <span>Diaglow</span>
         </div>
-        <nav>
-            <div class="close-btn">
-                <i class="fas fa-times"></i> <!-- Close button (X) -->
-              </div>
+        <nav aria-label="Primary Navigation">
+            <div class="close-btn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
@@ -29,14 +29,15 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="cart">
+        <div class="cart" aria-label="Shopping Cart">
             <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
+            <span id="cart-count" aria-live="polite">0</span>
         </div>
-        <div class="menu-toggle">
+        <div class="menu-toggle" aria-label="Open Menu">
             <i class="fas fa-bars"></i>
-          </div>
+        </div>
     </header>
+    
 
     <!-- Hero Section -->
     <section id= "home" class="hero">
@@ -48,7 +49,7 @@
 <section id="about" class="about">
     <h2>About Diaglow Black Hair Color</h2>
     <div class="about-content">
-        <img src="product1.jpg" alt="Diaglow Black Hair Color">
+        
         <div class="about-text">
             <p>
                 <strong>Diaglow Black Hair Color</strong> is your ultimate solution for radiant, long-lasting black hair. 
@@ -108,24 +109,32 @@
         </form>
     </div>
 </section>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('header nav');
-      const closeBtn = document.querySelector('.close-btn');
-  
-      // Open the menu when the hamburger icon is clicked
-      menuToggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-      });
-  
-      // Close the menu when the close (X) button is clicked
-      closeBtn.addEventListener('click', () => {
-        nav.classList.remove('open');
-      });
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
+        const closeBtn = document.querySelector('.close-btn');
+    
+        // Open the menu when the hamburger icon is clicked
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    
+        // Close the menu when the close (X) button is clicked
+        closeBtn.addEventListener('click', () => {
+            nav.classList.remove('open');
+        });
+    
+        // Close menu if clicking outside
+        document.addEventListener('click', (event) => {
+            if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                nav.classList.remove('open');
+            }
+        });
     });
-  </script>
-  
+    </script>
+    
 
     <!-- Cart Modal -->
     <div id="cart-modal" class="cart-modal">
@@ -139,9 +148,65 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 moeez</p>
-    </footer>
+    <footer style="background-color: #222; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start;">
+          <!-- Contact Information -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+            <h4 style="margin-bottom: 15px; color: #f9a825;">Contact Us</h4>
+            <p style="margin-bottom: 10px;">Email: <a href="mailto=support@diaglow.com" style="color: #f9a825; text-decoration: none;">support@diaglow.com</a></p>
+            <div>
+              <a href="#" style="margin: 0 10px; color: #fff; font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" style="margin: 0 10px; color: #fff; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+              <a href="#" style="margin: 0 10px; color: #fff; font-size: 20px;"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+      
+          <!-- Useful Links -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+            <h4 style="margin-bottom: 15px; color: #f9a825;">Quick Links</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin: 8px 0;"><a href="#" style="color: #fff; text-decoration: none;">Terms of Service</a></li>
+              <li style="margin: 8px 0;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+              <li style="margin: 8px 0;"><a href="#" style="color: #fff; text-decoration: none;">Refund Policy</a></li>
+              <li style="margin: 8px 0;"><a href="#" style="color: #fff; text-decoration: none;">Shipping Policy</a></li>
+            </ul>
+          </div>
+      
+          <!-- Email Signup -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+            <h4 style="margin-bottom: 15px; color: #f9a825;">Stay Updated</h4>
+            <p style="margin-bottom: 15px;">Subscribe to our newsletter for exclusive deals and updates.</p>
+            <form style="display: flex; gap: 10px;">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #555; background: #333; color: #fff;"
+              />
+              <button
+                type="submit"
+                style="padding: 10px 20px; background: #f9a825; border: none; border-radius: 5px; color: #000; font-weight: bold; cursor: pointer;"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      
+        <!-- Footer Bottom -->
+        <div style="border-top: 1px solid #555; margin-top: 20px; padding-top: 20px; text-align: center;">
+          <p style="margin: 5px 0;">© 2024 <strong>Diaglow</strong>
+          <p style="margin: 5px 0;">All rights reserved.</p>
+            <div style="margin-top: 10px; font-size: 24px;">
+                <i class="fab fa-cc-visa" style="color: #1a1f71; margin: 0 10px;"></i>
+                <i class="fab fa-cc-mastercard" style="color: #eb001b; margin: 0 10px;"></i>
+              </div>
+        </div>
+      </footer>
+      
+      <!-- Include Font Awesome for Icons -->
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      
+      
 
     <script src="scripts.js"></script>
 </body>
